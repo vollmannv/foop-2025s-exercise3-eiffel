@@ -1,0 +1,51 @@
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+EV_WINDOW           initialize @1          not_already_initialized:     
+<0000013DFF30B358>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+GAME                make @8                                             
+<0000013DFF3095A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<0000013DFF3095A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+EV_COLOR            make_with_rgb @1       a_red_within_range:          
+<000001E8B05ED9E8>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+GAME                make @10                                            
+<000001E8B05E75A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<000001E8B05E75A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+
+foop-2025s-exercise3-eiffel: PANIC: caught signal #21 (Ctrl-Break) -- Giving up...
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+ARRAY               grow @1                resizable:                   
+<0000026B96354728>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+GAME                make @4                                             
+<0000026B9634B5A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<0000026B9634B5A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
