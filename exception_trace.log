@@ -49,3 +49,22 @@ GAME                make @4
 GAME                root's creation                                     
 <0000026B9634B5A8>                         Routine failure.              Exit
 -------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+EV_FONT             make_with_values @1    a_family_valid:              
+<000001E0553BF6F8>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+SCORE               make @3                                             
+<000001E0553BDB18>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                make @5                                             
+<000001E0553745A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<000001E0553745A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------

@@ -16,6 +16,7 @@ create
 feature
 	player: PLAYER
 	deer: ARRAY [DEER]
+	score: SCORE
 	ticks: EV_TIMEOUT
 	deer_move_timer: EV_TIMEOUT
 
@@ -31,6 +32,7 @@ feature {NONE}
 			create ticks
 			create deer_move_timer
 			create deer.make_empty
+			create score.make
 
 			-- create application	
 			default_create
@@ -50,6 +52,9 @@ feature {NONE}
 				win.world.extend (deer [i].picture)
 				i := i+1
 			end
+
+			-- add score
+			win.world.extend (score)
 
 
 			-- add keyboard handler
