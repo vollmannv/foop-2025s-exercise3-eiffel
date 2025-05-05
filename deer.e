@@ -69,4 +69,23 @@ feature -- Move randomly
             moves_in_current_dir := moves_in_current_dir + 1
         end
 
+	get_bounds: ARRAY [EV_COORDINATE]
+        local
+            bounds: ARRAY [EV_COORDINATE]
+            l_w, l_h: INTEGER
+        do
+            create bounds.make_empty
+            l_w := picture.width
+            l_h := picture.height
+
+            bounds.force (create {EV_COORDINATE}.make (picture.x, picture.y), 1)  -- top-left
+            bounds.force (create {EV_COORDINATE}.make (picture.x + l_w, picture.y), 2)  -- top-right
+            bounds.force (create {EV_COORDINATE}.make (picture.x + l_w, picture.y + l_h ), 3)  -- bottom-right
+            bounds.force (create {EV_COORDINATE}.make (picture.x, picture.y + l_h ), 4)  -- bottom-left
+
+            Result := bounds
+        ensure
+            count_four: Result.count = 4
+        end
+
 end

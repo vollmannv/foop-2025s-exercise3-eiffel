@@ -49,4 +49,44 @@ feature -- Movement
 			Precursor
 			viewport.set_position_and_direction (sprite_x, sprite_y, {SPRITE_DIRECTION}.right)
 		end
+
+	take_picture (a_deer: ARRAY [DEER]): INTEGER
+        -- How many of the `a_deer` sprites are fully inside the viewport?
+    local
+        i, j: INTEGER
+        corners: ARRAY [EV_COORDINATE]
+        all_inside: BOOLEAN
+    do
+        -- Initialize result
+        Result := 0
+
+        from
+            i := a_deer.lower
+        until
+            i > a_deer.upper
+        loop
+            corners    := a_deer[i].get_bounds
+            all_inside := True
+
+            from
+                j := corners.lower
+            until
+                j > corners.upper or else not all_inside
+            loop
+                if not viewport.position_on_figure (corners[j].x, corners[j].y) then
+                    all_inside := False
+                end
+                j := j + 1
+            end
+            
+            if all_inside then
+                Result := Result + 1
+            end
+
+            i := i + 1
+        end
+    ensure
+        non_negative: Result >= 0
+    end
+
 end

@@ -30,7 +30,7 @@ feature {NONE} -- Initialization
 feature -- Public methods
 	increase_score (number: INTEGER)
 		require
-			number_greater_zero: number > 0
+			number_greater_eq_zero: number >= 0
 		do
 			current_score := current_score + number
 			set_text (score_pretext + current_score.out)

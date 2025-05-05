@@ -63,6 +63,7 @@ feature {NONE}
 			keyboard_handler.add_key_action ({EV_KEY}.key_a, agent a_pressed)
 			keyboard_handler.add_key_action ({EV_KEY}.key_s, agent s_pressed)
 			keyboard_handler.add_key_action ({EV_KEY}.key_d, agent d_pressed)
+			keyboard_handler.add_key_action ({EV_KEY}.key_space, agent space_pressed)
 
 			-- start ticks
 			ticks.actions.extend (agent win.refresh)
@@ -97,6 +98,14 @@ feature {NONE} -- Keyboard events
 	d_pressed
 		do
 			player.move_right
+		end
+
+	space_pressed
+		local
+			score_result: INTEGER
+		do
+			score_result := player.take_picture (deer)
+			score.increase_score (score_result)
 		end
 
 feature {NONE} -- Deer movement
