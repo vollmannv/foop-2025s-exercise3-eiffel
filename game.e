@@ -16,6 +16,7 @@ create
 feature
 	player: PLAYER
 	deer: ARRAY [DEER]
+	obstacles: ARRAY [OBSTACLE]
 	score: SCORE
 	ticks: EV_TIMEOUT
 	deer_move_timer: EV_TIMEOUT
@@ -27,11 +28,13 @@ feature {NONE}
 			keyboard_handler: KEYBOARD_HANDLER
 			i: INTEGER
 			d: DEER
+			o: OBSTACLE
 		do
 			create player.make (200, 200)
 			create ticks
 			create deer_move_timer
 			create deer.make_empty
+			create obstacles.make_empty
 			create score.make
 
 			-- create application	
@@ -50,6 +53,17 @@ feature {NONE}
 				create d.make
 				deer.force (d, i)
 				win.world.extend (deer [i].picture)
+				-- win.world.extend (deer [i].bounds_debug)
+				i := i+1
+			end
+
+			-- add obstacles
+			from i := 1 until i > obstacle_count
+			loop
+				create o.make ("images/tree.png")
+				obstacles.force (o, i)
+				win.world.extend (obstacles [i].picture)
+				-- win.world.extend (obstacles [i].bounds_debug)
 				i := i+1
 			end
 
@@ -76,35 +90,41 @@ feature {NONE}
 			-- start game
 			win.show
 			launch
+		rescue
+			io.put_string ("An exception occurred during game startup!%N")
 		end
 
 feature {NONE} -- Keyboard events
 
 	w_pressed
 		do
-			player.move_up
+			player.move_up (obstacles)
+			update_obstacles ({SPRITE_DIRECTION}.up)
 		end
 
 	a_pressed
 		do
-			player.move_left
+			player.move_left (obstacles)
+			update_obstacles ({SPRITE_DIRECTION}.left)
 		end
 
 	s_pressed
 		do
-			player.move_down
+			player.move_down (obstacles)
+			update_obstacles ({SPRITE_DIRECTION}.down)
 		end
 
 	d_pressed
 		do
-			player.move_right
+			player.move_right (obstacles)
+			update_obstacles ({SPRITE_DIRECTION}.right)
 		end
 
 	space_pressed
 		local
 			score_result: INTEGER
 		do
-			score_result := player.take_picture (deer)
+			score_result := player.take_picture (deer, obstacles)
 			score.increase_score (score_result)
 		end
 
@@ -118,13 +138,33 @@ feature {NONE} -- Deer movement
 	        until
 	            i > deer.upper
 	        loop
-	            deer [i].move
+	            deer [i].move (obstacles)
 	            i := i + 1
 	        end
 	    end
 
+	update_obstacles (direction: INTEGER)
+		local
+			i: INTEGER
+			cx, cy, width, height: INTEGER
+		do
+			from
+				i := obstacles.lower
+			until
+				i > obstacles.upper
+			loop
+				cx := obstacles [i].picture.x
+				cy := obstacles [i].picture.y
+				width := obstacles [i].picture.width
+				height := obstacles [i].picture.height
+				obstacles [i].extrude_bounds (direction, cx, cy, width, height, player.x, player.y)
+				i := i+1
+			end
+		end
+
 feature -- Constants
 	deer_count: INTEGER = 10
+	obstacle_count: INTEGER = 50
 	ticks_interval: INTEGER = 16
 	deer_move_interval: INTEGER = 160
 end

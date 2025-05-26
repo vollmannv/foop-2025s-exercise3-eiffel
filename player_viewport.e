@@ -29,18 +29,18 @@ feature
 			valid_direction: new_direction >= 1 and new_direction <= 4
 		do
 			default_create
-            build_triangle (x_new, y_new, new_direction)
+            update_viewport (x_new, y_new, new_direction)
             set_center
 		end
 
 feature {NONE}
-	build_triangle (x_new, y_new, dir: INTEGER)
+	update_viewport (x_new, y_new, dir: INTEGER)
         local
             size, half_base: INTEGER
 			x_offset, y_offset: INTEGER
         do
-            size       := 100
-            half_base  := 80
+            size       := 200
+            half_base  := 160
             x_offset   := 18
             y_offset   := 10
             inspect dir

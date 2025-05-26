@@ -68,3 +68,146 @@ GAME                make @5
 GAME                root's creation                                     
 <000001E0553745A8>                         Routine failure.              Exit
 -------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+EV_MODEL_POLYGON    set_i_th_point_position @1
+                                           i_within_bounds:
+<000002B1CB876A28>  (From EV_MODEL_MULTI_POINTED)
+                                           Precondition violated.        Fail
+-------------------------------------------------------------------------------
+DEER                update_debug_bounds @10
+<000002B1CB8320F8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+DEER                make @7                                             
+<000002B1CB8320F8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                make @13                                            
+<000002B1CB7DA5A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<000002B1CB7DA5A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+EV_MODEL_POLYGON    set_i_th_point_position @1
+                                           i_within_bounds:
+<0000021A72F15A78>  (From EV_MODEL_MULTI_POINTED)
+                                           Precondition violated.        Fail
+-------------------------------------------------------------------------------
+DEER                update_bounds @14                                   
+<0000021A72ED10F8>  (From BOUNDS_DEBUGGABLE)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+DEER                make @7                                             
+<0000021A72ED10F8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                make @13                                            
+<0000021A72E795A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<0000021A72E795A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+GAME                make @16               Segmentation violation:      
+<000001DF74F4E5A8>                         Operating system signal.      Fail
+-------------------------------------------------------------------------------
+GAME                make @16                                            
+<000001DF74F4E5A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<000001DF74F4E5A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+GAME                make @16               Segmentation violation:      
+<0000019C1FCCF5A8>                         Operating system signal.      Fail
+-------------------------------------------------------------------------------
+GAME                make @16                                            
+<0000019C1FCCF5A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<0000019C1FCCF5A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+ARRAY               clear_all @1           has_default:                 
+<000002223264CA28>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+DEER                update_bounds @1                                    
+<00000222326080F8>  (From BOUNDS_DEBUGGABLE)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+DEER                make @7                                             
+<00000222326080F8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                make @13                                            
+<00000222325B05A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<00000222325B05A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+ARRAY               discard_items @1       has_default:                 
+<0000023B80294A28>                         Precondition violated.        Fail
+-------------------------------------------------------------------------------
+DEER                update_bounds @1                                    
+<0000023B802500F8>  (From BOUNDS_DEBUGGABLE)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+DEER                make @7                                             
+<0000023B802500F8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                make @13                                            
+<0000023B801F85A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<0000023B801F85A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+foop-2025s-exercise3-eiffel: system execution failed.
+Following is the set of recorded exceptions:
+
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+GAME                make @16               Segmentation violation:      
+<000001CF59D325A8>                         Operating system signal.      Fail
+-------------------------------------------------------------------------------
+GAME                make @16                                            
+<000001CF59D325A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+GAME                root's creation                                     
+<000001CF59D325A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------

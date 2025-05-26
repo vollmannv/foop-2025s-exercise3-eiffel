@@ -63,7 +63,7 @@ feature -- Movement
 			Result := sprite_y
 		end
 
-	move_up
+	move_up (obstacles: ARRAY [OBSTACLE])
 		local
 			new_y: INTEGER
 		do
@@ -76,7 +76,7 @@ feature -- Movement
 			picture.set_point_position (sprite_x, sprite_y)
 		end
 
-	move_down
+	move_down (obstacles: ARRAY [OBSTACLE])
 		local
 			new_y: INTEGER
 		do
@@ -89,7 +89,7 @@ feature -- Movement
 			picture.set_point_position (sprite_x, sprite_y)
 		end
 
-	move_left
+	move_left (obstacles: ARRAY [OBSTACLE])
 		local
 			new_x: INTEGER
 		do
@@ -102,7 +102,7 @@ feature -- Movement
 			picture.set_point_position (sprite_x, sprite_y)
 		end
 
-	move_right
+	move_right (obstacles: ARRAY [OBSTACLE])
 		local
 			new_x: INTEGER
 		do
